@@ -112,3 +112,23 @@ curl --location 'http://localhost:3009/scores?players=nguyenpd&startDate=2023-01
 --data ''
 ```
 
+---
+
+# CICD Jenkins
+
+#### build container jenkins:
+```bash
+#create network
+docker network create jenkins
+
+# create container
+docker run \
+  -d \
+  --name jenkins-docker \
+  --network jenkins \
+  --volume /Users/loh/go/jenkins/jenkins-docker-certs:/certs/client \
+  --volume /Users/loh/go/jenkins/jenkins-data:/var/jenkins_home \
+  -p 8080:8080 \
+  -p 50000:50000 \
+  jenkins/jenkins:lts
+```
