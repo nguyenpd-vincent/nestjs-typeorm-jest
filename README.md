@@ -95,18 +95,15 @@ curl --location 'http://localhost:3009/scores' \
     "score": 109,
     "time":"2023-08-19T00:05:21.015Z"
 }'
-```
-```bash
+
 # delete one score:
 curl --location --request DELETE 'http://localhost:3009/scores/14' \
 --data ''
-```
-```bash
+
 # get history a scores:
 curl --location 'http://localhost:3009/scores/history?player=nguyenpd' \
 --data ''
-```
-```bash
+
 # findAll scores:
 curl --location 'http://localhost:3009/scores?players=nguyenpd&startDate=2023-01-12%2000%3A00%3A00&endDate=2023-07-13%2023%3A00%3A00' \
 --data ''
